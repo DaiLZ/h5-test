@@ -1,0 +1,225 @@
+@import "keyframe";
+@import "variables";
+@import "mixin";
+$first-t:1s;
+$f-t:.5s;  //can apply to son's delay
+$s-t:.5s;
+
+.bg-wrapper{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  .animation{
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:-100%;
+    animation: opacity1-0 $first-t+$f-t ease-in;
+    ul{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color:$bg-color-a-lightest;
+      font-size: 0;
+      li{
+        position: relative;
+        display: inline-block;
+        letter-spacing: normal;
+        width: 10%;
+        height: 100%;
+      }
+      li:nth-of-type(odd){
+        animation: slideUp $first-t ease-in;
+      }
+      li:nth-of-type(even){
+        animation: slideDown $first-t ease-in;
+      }
+    }
+  }
+  .bg{
+    width: 100%;
+    height: 100%;
+    //background-color:$bg-color;
+    background-image: url("../images/bg.png");
+    img{
+      position: absolute;
+      animation: tobig $f-t+0.2s linear $first-t;
+      animation-fill-mode: backwards;
+    }
+    .bgm-wrapper{
+      position: absolute;
+      width: $bgm-size;
+      height: $bgm-size;
+      top: $bgm-position;
+      right: $bgm-position;
+      z-index: 9999;
+      .bgm{
+        width: $bgm-size;
+        height: $bgm-size;
+        line-height: $bgm-size;
+        font-size: 16px;
+        background-color: $primary-color;
+        opacity: .6;
+        border-radius: 50%;
+        text-align: center;
+        color: white;
+        animation: rotating 2s linear infinite;
+      }
+    }
+    .btn-wrapper{
+      position: absolute;
+      left: 50%;
+      margin-left: -$bgm-size/4;
+      width: $bgm-size/2;
+      height: $bgm-size*2;
+      z-index: 9999;
+      bottom: 20px;
+      .btn{
+        position: absolute;
+        animation: uping 1.2s linear infinite;
+        cursor: pointer; //for PC
+        .pre1,.pre2{
+          position: absolute;
+          background-color:#fafafa;
+          width: 14px;
+          height: 5px;
+          border-radius: 2px;
+          box-shadow: 1px -1px 1px #646464;
+          top: 0;
+        }
+        .pre1{
+          transform: rotate(130deg);
+          left: -3px;
+        }
+        .pre2{
+          transform: rotate(50deg);
+          left: 3px;
+        }
+      }
+    }
+    section{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      //position: absolute;
+      //top:90px;
+      //left: 25px;
+      //right: 25px;
+      //height: 410px;
+      //animation: left-in $f-t linear;
+      //border: 1px dotted red;
+      .content{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        //background-color: $content-color;
+        //border: 1px solid $border-color;
+        .title-wrapper{
+          position: absolute;
+          left: 50%;
+          margin-left: -100px;
+          width: 200px;
+          height: 200px;
+          background-image: url("../images/11.png");
+          background-size: 200px;
+          background-repeat: no-repeat;
+          background-position: center;
+          animation: tobig $f-t+0.2s linear;
+          animation-delay:$first-t;
+          animation-fill-mode: backwards;
+          .title{
+            position: relative;
+            display: block;
+            width: 100px;
+            height: 200px;
+            font-size: 44px;
+            font-weight: bold;
+            color: rgb(106,154,220);
+            text-align: center;
+            margin: 0 auto;
+            padding: 40px 0;
+            //animation: left-rotating-in $s-t linear;
+            animation: left-rotating-in 1s linear;
+            animation-delay: $first-t+$f-t;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            left: -200%;
+          }
+        }
+        .subtitle{
+          position: relative;
+          font-size: 22px;
+          color: $subt-color;
+          text-align: center;
+          word-wrap: break-word;
+          overflow: hidden;
+          animation: txt-tobig $s-t linear $first-t+$f-t;
+          animation-fill-mode: backwards;
+          margin:40px auto 30px auto;
+          padding: 2px 0;
+          &:before{
+            content: "";
+            background-color: $subt-line-color;
+            position:absolute;
+            top:0;
+            left: 14%;
+            width: 72%;
+            height: 1px;
+            animation: left-in $s-t*3 ease-out $first-t+$f-t;
+            animation-fill-mode: backwards;
+          }
+          &:after{
+            content: "";
+            background-color: $subt-line-color;
+            position:absolute;
+            bottom:0;
+            right: 14%;
+            width: 72%;
+            height: 1px;
+            animation: right-in $s-t*3 ease-out $first-t+$f-t;
+            animation-fill-mode: backwards;
+          }
+        }
+        .txt{
+          position: relative;
+          color: rgb(16,44,105);
+          margin: 15px 60px;
+          animation: turnover 2s linear $first-t+$f-t;
+          //animation: turnover 1s linear $first-t+$f-t alternate 3;
+          animation-fill-mode: backwards;
+        }
+      }
+      &.current{
+        animation: rotating 2s linear;
+      }
+    }
+  }
+}
+
+@media (min-device-width: 375px){
+}
+@media (min-device-width: 414px){
+}
+@media (min-device-width: 375px){
+}
+@media (min-device-aspect-ratio:375/667) {
+  .bg{
+    padding: 8%;
+    section{
+      padding-top:20%;
+      padding-bottom: 15% ;
+    }
+  }
+}
+@media (min-device-aspect-ratio:299/400) {
+  .bg{
+    padding:6% 4.5%;
+    section{
+      padding:10% 7.5% 8% 7.5%;
+    }
+  }
+}

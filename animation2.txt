@@ -1,0 +1,44 @@
+  .animation{
+    z-index: 9999999999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    ul{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      //transition: all 1s;
+      margin: 0;
+      padding: 0;
+      font-size: 0;
+      li{
+        position: relative;
+        display: inline-block;
+        letter-spacing: normal;
+        width: 10%;
+        height: 100%;
+        opacity: 1;
+        transition:all 1s;
+        background-color: $bg-color;
+      }
+      li:nth-of-type(odd){
+        top:-100%;
+      }
+      li:nth-of-type(even){
+        bottom: -100%;
+      }
+    }
+    &.active{
+      ul{
+        li{
+          opacity: 0;
+        }
+        li:nth-of-type(odd){
+          top:0;
+        }
+        li:nth-of-type(even){
+          bottom: 0;
+        }
+      }
+    }
+  }

@@ -1,0 +1,53 @@
+  .animation{
+    z-index: 9999999999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    ul{
+      position: absolute;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      transition: all 1s;
+      margin: 0;
+      padding: 0;
+      font-size: 0;
+      li{
+        position: relative;
+        display: inline-block;
+        letter-spacing: normal;
+        width: 10%;
+        height: 100%;
+        transition:all 1s;
+      }
+    }
+    ul.top{
+      top:0;
+      li{
+        top:-100%;
+        background: linear-gradient(rgba($bg-color,1),rgba($bg-color,0));
+      }
+    }
+    ul.bottom{
+      bottom: 0;
+      li{
+        bottom: -100%;
+        background: linear-gradient(rgba($bg-color,0),rgba($bg-color,1));
+      }
+    }
+    &.active{
+      ul{
+        left: 0;
+      }
+      ul.top{
+        li{
+          top:0;
+        }
+      }
+      ul.bottom{
+        li{
+          bottom: 0;
+        }
+      }
+    }
+  }

@@ -1,0 +1,280 @@
+// box-shadow
+@mixin box-shadow {
+	-webkit-box-shadow: 0 0 6px rgba(0,0,0,.3);
+	box-shadow: 0 0 6px rgba(0,0,0,.3);
+}
+@mixin box-shadow-none {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+@mixin fade {
+	opacity: 0;
+	transition: opacity 0.15s linear;
+}
+
+// fixed
+@mixin fixed-full {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+// scroll
+@mixin scroll-x {
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+@mixin scroll-y {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+// mask
+@mixin mask {
+	background-color: #000;
+	background-color: rgba(0,0,0,.8);
+	filter: alpha(opacity=80);
+}
+
+// transition
+@mixin trans($element,$time) {
+	-webkit-transition: $element $time ease-out;
+	-o-transition: $element $time ease-out;
+	transition: $element $time ease-out;
+}
+
+@mixin trans-background {
+	-webkit-transition: background 1s cubic-bezier(.075,.82,.165,1);
+	transition: background 1s cubic-bezier(.075,.82,.165,1);
+}
+
+// animation
+@mixin animate($animation,$time) {
+	animation: $animation linear $time infinite;
+	-webkit-animation: $animation linear $time infinite;
+	-moz-animation: $animation linear $time infinite;
+	-o-animation: $animation linear $time infinite;
+}
+
+// rotate
+@mixin rotate {
+	@keyframes rotate {
+		0% {
+			-webkit-transform: rotate(0deg);
+			-ms-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+		100% {
+			-webkit-transform: rotate(360deg);
+			-ms-transform: rotate(360deg);
+			-o-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
+	@-moz-keyframes rotate {
+		0% {
+			-webkit-transform: rotate(0deg);
+			-ms-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+		100% {
+			-webkit-transform: rotate(360deg);
+			-ms-transform: rotate(360deg);
+			-o-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
+	@-webkit-keyframes rotate {
+		0% {
+			-webkit-transform: rotate(0deg);
+			-ms-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+		100% {
+			-webkit-transform: rotate(360deg);
+			-ms-transform: rotate(360deg);
+			-o-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
+	@-o-keyframes rotate {
+		0% {
+			-webkit-transform: rotate(0deg);
+			-ms-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+		100% {
+			-webkit-transform: rotate(360deg);
+			-ms-transform: rotate(360deg);
+			-o-transform: rotate(360deg);
+			transform: rotate(360deg);
+		}
+	}
+}
+
+// after
+@mixin after {
+	content: "";
+	position: absolute;
+	z-index: 2;
+}
+@mixin after-w {
+	width: 1px;
+}
+@mixin after-h {
+	height: 1px;
+}
+@mixin after-solid-top($color,$top,$left,$right) {
+	top: $top;
+	left: $left;
+	right: $right;
+	background-color: $color;
+	@include after;
+	@include after-h;
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (   -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2) {
+		-webkit-transform: scaleY(0.5);
+		transform: scaleY(0.5);
+		-webkit-transform-origin: 0% 0%;
+		transform-origin: 0% 0%;
+	}
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 3),
+	only screen and (   min--moz-device-pixel-ratio: 3),
+	only screen and (   -o-min-device-pixel-ratio: 3/1),
+	only screen and (        min-device-pixel-ratio: 3) {
+		-webkit-transform: scaleY(0.33);
+		transform: scaleY(0.33);
+		-webkit-transform-origin: 0% 0%;
+		transform-origin: 0% 0%;
+	}
+}
+@mixin after-solid-bottom($color,$bottom,$left,$right) {
+	bottom: $bottom;
+	left: $left;
+	right: $right;
+	background-color: $color;
+	@include after;
+	@include after-h;
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (   -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2) {
+		-webkit-transform: scaleY(0.5);
+		transform: scaleY(0.5);
+		-webkit-transform-origin: 0% 100%;
+		transform-origin: 0% 100%;
+	}
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 3),
+	only screen and (   min--moz-device-pixel-ratio: 3),
+	only screen and (   -o-min-device-pixel-ratio: 3/1),
+	only screen and (        min-device-pixel-ratio: 3) {
+		-webkit-transform: scaleY(0.33);
+		transform: scaleY(0.33);
+		-webkit-transform-origin: 0% 100%;
+		transform-origin: 0% 100%;
+	}
+}
+@mixin after-solid-right($color,$top,$bottom,$right) {
+	top: $top;
+	bottom: $bottom;
+	right: $right;
+	background-color: $color;
+	@include after;
+	@include after-w;
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (   -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2) {
+		-webkit-transform: scaleX(0.5);
+		transform: scaleX(0.5);
+		-webkit-transform-origin: 100% 0%;
+		transform-origin: 100% 0%;
+	}
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 3),
+	only screen and (   min--moz-device-pixel-ratio: 3),
+	only screen and (   -o-min-device-pixel-ratio: 3/1),
+	only screen and (        min-device-pixel-ratio: 3) {
+		-webkit-transform: scaleX(0.33);
+		transform: scaleX(0.33);
+		-webkit-transform-origin: 100% 0%;
+		transform-origin: 100% 0%;
+	}
+}
+@mixin after-solid-left($color,$top,$bottom,$left) {
+	top: $top;
+	bottom: $bottom;
+	left: $left;
+	background-color: $color;
+	@include after;
+	@include after-w;
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (   -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2) {
+		-webkit-transform: scaleX(0.5);
+		transform: scaleX(0.5);
+		-webkit-transform-origin: 0% 0%;
+		transform-origin: 0% 0%;
+	}
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 3),
+	only screen and (   min--moz-device-pixel-ratio: 3),
+	only screen and (   -o-min-device-pixel-ratio: 3/1),
+	only screen and (        min-device-pixel-ratio: 3) {
+		-webkit-transform: scaleX(0.33);
+		transform: scaleX(0.33);
+		-webkit-transform-origin: 0% 0%;
+		transform-origin: 0% 0%;
+	}
+}
+
+// text-overflow
+@mixin ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+// user-select
+@mixin select-none {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@mixin select-all {
+	-webkit-user-select: all;
+	-moz-user-select: all;
+	-ms-user-select: all;
+	user-select: all;
+}
+
+// clearfix
+@mixin clearfix {
+	zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+}

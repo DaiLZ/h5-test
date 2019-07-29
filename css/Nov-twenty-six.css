@@ -1,0 +1,258 @@
+@keyframes rotating {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(1turn); } }
+@keyframes uping {
+  0% {
+    opacity: 0;
+    bottom: 0; }
+  25% {
+    opacity: 1;
+    bottom: 12px; }
+  50% {
+    opacity: 1;
+    bottom: 18px; }
+  100% {
+    opacity: 0;
+    bottom: 30px; } }
+@keyframes slideDown {
+  from {
+    top: -100%;
+    background-color: #d5ece8; }
+  to {
+    top: 0;
+    background-color: transparent; } }
+@keyframes slideUp {
+  from {
+    bottom: -100%;
+    background-color: #d5ece8; }
+  to {
+    bottom: 0;
+    background-color: transparent; } }
+@keyframes opacity1-0 {
+  0% {
+    opacity: 1;
+    top: 0; }
+  66.6% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    top: 0; } }
+@keyframes left-in {
+  from {
+    left: -120%; } }
+@keyframes right-in {
+  from {
+    right: -120%; } }
+@keyframes left-rotating-in {
+  from {
+    transform: rotate(0deg);
+    opacity: 1; }
+  to {
+    left: 0;
+    transform: rotate(2turn);
+    opacity: 1; } }
+@keyframes tobig {
+  from {
+    transform: scale(0);
+    transform-origin: center; } }
+@keyframes txt-tobig {
+  from {
+    transform: scale(0); } }
+@keyframes wag {
+  from {
+    transform: rotate(-30deg); }
+  to {
+    transform: rotate(30deg); } }
+@keyframes wag1 {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(20deg); } }
+@keyframes wag2 {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(-20deg); } }
+@keyframes turnover {
+  0% {
+    transform: scale(0) perspective(400px) rotateY(180deg); }
+  30% {
+    transform: scale(0.3) perspective(400px) rotateY(0deg); }
+  60% {
+    transform: scale(0.6) perspective(400px) rotateY(180deg); }
+  100% {
+    transform: scale(1) perspective(400px) rotateY(0deg); } }
+.bg-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden; }
+  .bg-wrapper .animation {
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    animation: opacity1-0 1.5s ease-in; }
+    .bg-wrapper .animation ul {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #f1f9f7;
+      font-size: 0; }
+      .bg-wrapper .animation ul li {
+        position: relative;
+        display: inline-block;
+        letter-spacing: normal;
+        width: 10%;
+        height: 100%; }
+      .bg-wrapper .animation ul li:nth-of-type(odd) {
+        animation: slideUp 1s ease-in; }
+      .bg-wrapper .animation ul li:nth-of-type(even) {
+        animation: slideDown 1s ease-in; }
+  .bg-wrapper .bg {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/bg.png"); }
+    .bg-wrapper .bg img {
+      position: absolute;
+      animation: tobig 0.7s linear 1s;
+      animation-fill-mode: backwards; }
+    .bg-wrapper .bg .bgm-wrapper {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 20px;
+      right: 20px;
+      z-index: 9999; }
+      .bg-wrapper .bg .bgm-wrapper .bgm {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        background-color: #111;
+        opacity: .6;
+        border-radius: 50%;
+        text-align: center;
+        color: white;
+        animation: rotating 2s linear infinite; }
+    .bg-wrapper .bg .btn-wrapper {
+      position: absolute;
+      left: 50%;
+      margin-left: -7.5px;
+      width: 15px;
+      height: 60px;
+      z-index: 9999;
+      bottom: 20px; }
+      .bg-wrapper .bg .btn-wrapper .btn {
+        position: absolute;
+        animation: uping 1.2s linear infinite;
+        cursor: pointer; }
+        .bg-wrapper .bg .btn-wrapper .btn .pre1, .bg-wrapper .bg .btn-wrapper .btn .pre2 {
+          position: absolute;
+          background-color: #fafafa;
+          width: 14px;
+          height: 5px;
+          border-radius: 2px;
+          box-shadow: 1px -1px 1px #646464;
+          top: 0; }
+        .bg-wrapper .bg .btn-wrapper .btn .pre1 {
+          transform: rotate(130deg);
+          left: -3px; }
+        .bg-wrapper .bg .btn-wrapper .btn .pre2 {
+          transform: rotate(50deg);
+          left: 3px; }
+    .bg-wrapper .bg section {
+      position: relative;
+      width: 100%;
+      height: 100%; }
+      .bg-wrapper .bg section .content {
+        position: relative;
+        width: 100%;
+        height: 100%; }
+        .bg-wrapper .bg section .content .title-wrapper {
+          position: absolute;
+          left: 50%;
+          margin-left: -100px;
+          width: 200px;
+          height: 200px;
+          background-image: url("../images/11.png");
+          background-size: 200px;
+          background-repeat: no-repeat;
+          background-position: center;
+          animation: tobig 0.7s linear;
+          animation-delay: 1s;
+          animation-fill-mode: backwards; }
+          .bg-wrapper .bg section .content .title-wrapper .title {
+            position: relative;
+            display: block;
+            width: 100px;
+            height: 200px;
+            font-size: 44px;
+            font-weight: bold;
+            color: #6a9adc;
+            text-align: center;
+            margin: 0 auto;
+            padding: 40px 0;
+            animation: left-rotating-in 1s linear;
+            animation-delay: 1.5s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            left: -200%; }
+        .bg-wrapper .bg section .content .subtitle {
+          position: relative;
+          font-size: 22px;
+          color: #2f56a4;
+          text-align: center;
+          word-wrap: break-word;
+          overflow: hidden;
+          animation: txt-tobig 0.5s linear 1.5s;
+          animation-fill-mode: backwards;
+          margin: 40px auto 30px auto;
+          padding: 2px 0; }
+          .bg-wrapper .bg section .content .subtitle:before {
+            content: "";
+            background-color: #182c55;
+            position: absolute;
+            top: 0;
+            left: 14%;
+            width: 72%;
+            height: 1px;
+            animation: left-in 1.5s ease-out 1.5s;
+            animation-fill-mode: backwards; }
+          .bg-wrapper .bg section .content .subtitle:after {
+            content: "";
+            background-color: #182c55;
+            position: absolute;
+            bottom: 0;
+            right: 14%;
+            width: 72%;
+            height: 1px;
+            animation: right-in 1.5s ease-out 1.5s;
+            animation-fill-mode: backwards; }
+        .bg-wrapper .bg section .content .txt {
+          position: relative;
+          color: #102c69;
+          margin: 15px 60px;
+          animation: turnover 2s linear 1.5s;
+          animation-fill-mode: backwards; }
+      .bg-wrapper .bg section.current {
+        animation: rotating 2s linear; }
+
+@media (min-device-aspect-ratio: 375 / 667) {
+  .bg {
+    padding: 8%; }
+    .bg section {
+      padding-top: 20%;
+      padding-bottom: 15%; } }
+@media (min-device-aspect-ratio: 299 / 400) {
+  .bg {
+    padding: 6% 4.5%; }
+    .bg section {
+      padding: 10% 7.5% 8% 7.5%; } }
+
+/*# sourceMappingURL=Nov-twenty-six.css.map */

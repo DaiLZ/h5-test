@@ -1,0 +1,166 @@
+@import "variables";
+@keyframes rotating {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(1turn);
+  }
+}
+@keyframes uping {
+  0%{
+    opacity: 0;
+    bottom: 0;
+  }
+  25%{
+    opacity: 1;
+    bottom: 12px;
+  }
+  50%{
+    opacity: 1;
+    bottom: 18px;
+  }
+  100%{
+    opacity: 0;
+    bottom: 30px;
+  }
+}
+@keyframes slideDown{
+  from{
+    top:-100%;
+    background-color: $bg-color-a;
+  }
+  to{
+    top:0;
+    background-color: transparent;
+  }
+}
+@keyframes slideUp{
+  from{
+    bottom:-100%;
+    background-color: $bg-color-a;
+  }
+  to{
+    bottom:0;
+    background-color: transparent;
+  }
+}
+@keyframes opacity1-0 {
+  0%{
+    opacity:1;
+    top:0;
+  }
+  66.6%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+    top:0;
+  }
+}
+@keyframes left-in {
+  //0%{
+  //  left: -120%;
+  //}
+  //50%{
+  //  left: -120%;
+  //}
+  //100%{
+  //  left: 14%;
+  //}
+  from{
+    left: -120%;
+  }
+  to{}
+}
+@keyframes right-in {
+  //0%{
+  //  right: -120%;
+  //}
+  //50%{
+  //  right: -120%;
+  //}
+  //100%{
+  //  right: 14%;
+  //}
+  from{
+    right: -120%;
+  }
+  to{}
+}
+@keyframes left-rotating-in {
+  from{
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  to{
+    left: 0;
+    transform: rotate(2turn);
+    opacity:1;
+  }
+}
+@keyframes tobig {
+  //0%{
+  //  //width: 0;
+  //  //height: 0;
+  //  transform: scale(0);
+  //  transform-origin:center;
+  //}
+  //33.3%{
+  //  //width: 0;
+  //  //height: 0;
+  //  transform: scale(0);
+  //  transform-origin:center;
+  //}
+  //100%{
+  //}
+  from{
+    transform: scale(0);
+    transform-origin:center;
+  }
+  to{}
+}
+@keyframes txt-tobig {
+  //0%{
+  //  transform: scale(0);
+  //}
+  //75%{
+  //  transform: scale(0);
+  //}
+  //100%{
+  //}
+  from{
+    transform: scale(0);
+  }
+  to{}
+}
+@keyframes wag {
+  from{
+    transform: rotate(-30deg);
+  }
+  to{
+    transform: rotate(30deg);
+  }
+}
+@keyframes wag1 {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(20deg);
+  }
+}
+@keyframes wag2 {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(-20deg);
+  }
+}
+@keyframes turnover{
+  0%{transform:scale(0) perspective(400px) rotateY(180deg);}
+  30%{transform:scale(0.3) perspective(400px) rotateY(0deg);}
+  60%{transform:scale(0.6) perspective(400px) rotateY(180deg);}
+  100%{transform:scale(1) perspective(400px) rotateY(0deg);}
+}
